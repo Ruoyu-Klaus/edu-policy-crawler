@@ -6,7 +6,7 @@ const startCrawler = require('./crawler/util/startCrawler');
 const getProxy = require('./crawler/src/feedProxy');
 
 var cron = require('node-cron');
-const sendMail = require('./smpt');
+const sendMail = require('./nodemailer');
 
 const server = require('./server');
 
