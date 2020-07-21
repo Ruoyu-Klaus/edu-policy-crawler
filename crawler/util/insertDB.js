@@ -2,7 +2,7 @@ const Category = require('../../models/Category');
 const Policy = require('../../models/Policy');
 const Type = require('../../models/Type');
 
-const sendMail = require('../../nodemailer');
+const sendMail = require('../nodemailer');
 // Receive a map with key as title，values as an object containing {category, site, type, date, title, uri, link}
 const insertDB = async data => {
   data = await [...data].map(async policy => {
