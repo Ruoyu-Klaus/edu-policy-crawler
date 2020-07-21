@@ -1,0 +1,386 @@
+[
+  {
+    "site": "教育部基础教育司",
+    "category": "基础教育",
+    "type": "义务教育",
+    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/moe_706/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部基础教育司",
+    "category": "基础教育",
+    "type": "学前教育",
+    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/moe_705/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部基础教育司",
+    "category": "基础教育",
+    "type": "高中教育",
+    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/s3732/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部体育卫生和艺术教育司",
+    "category": "特殊教育",
+    "type": "德育与校外教育",
+    "uri": "http://www.moe.gov.cn/s78/A17/A17_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部基础教育司",
+    "category": "特殊教育",
+    "type": "德育与校外教育",
+    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/moe_710/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部思想政治科学司",
+    "category": "特殊教育",
+    "type": "思政教育",
+    "uri": "http://www.moe.gov.cn/s78/A12/A12_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部社会科学司",
+    "category": "特殊教育",
+    "type": "思政教育",
+    "uri": "http://www.moe.gov.cn/s78/A13/A13_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部基础教育司",
+    "category": "特殊教育",
+    "type": "残疾人教育",
+    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/moe_709/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部民族教育司",
+    "category": "特殊教育",
+    "type": "民族教育",
+    "uri": "http://www.moe.gov.cn/s78/A09/A09_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部职业教育与成人教育司",
+    "category": "特殊教育",
+    "type": "职业与成人教育",
+    "uri": "http://www.moe.gov.cn/s78/A07/A07_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部工作动态",
+    "category": "综合",
+    "type": "工作动态",
+    "uri": "http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/",
+    "pattern": {
+      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部政策解读",
+    "category": "综合",
+    "type": "政策解读",
+    "uri": "http://www.moe.gov.cn/jyb_xwfb/s271/",
+    "pattern": {
+      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部教材局",
+    "category": "综合",
+    "type": "教材局",
+    "uri": "http://www.moe.gov.cn/s78/A26/A26_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部时政要闻",
+    "category": "综合",
+    "type": "教育要闻",
+    "uri": "http://www.moe.gov.cn/jyb_sy/shizheng/",
+    "pattern": {
+      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部教育要闻",
+    "category": "综合",
+    "type": "教育要闻",
+    "uri": "http://www.moe.gov.cn/jyb_sy/sy_jyyw/",
+    "pattern": {
+      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "中央文件",
+    "category": "综合",
+    "type": "综合政策",
+    "uri": "http://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1778/",
+    "pattern": {
+      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "其他部门文件",
+    "category": "综合",
+    "type": "综合政策",
+    "uri": "http://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1779/",
+    "pattern": {
+      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部财务司",
+    "category": "综合",
+    "type": "部门预算",
+    "uri": "http://www.moe.gov.cn/s78/A05/A05_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部高校教育司",
+    "category": "高等教育",
+    "type": "专业设置",
+    "uri": "http://www.moe.gov.cn/s78/A08/gjs_left/moe_1034/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部学位管理和研究生教育司",
+    "category": "高等教育",
+    "type": "专业设置",
+    "uri": "http://www.moe.gov.cn/s78/A22/A22_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部国际合作与交流司",
+    "category": "高等教育",
+    "type": "国际合作",
+    "uri": "http://www.moe.gov.cn/s78/A20/A20_zcwj/",
+    "pattern": {
+      "li": "div.sj_cen>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部高校学生司",
+    "category": "高等教育",
+    "type": "就业创业",
+    "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_780/s3265/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部高校学生司",
+    "category": "高等教育",
+    "type": "成人本专科类招生",
+    "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_777/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部高校学生司",
+    "category": "高等教育",
+    "type": "普通类招生",
+    "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_776/s3258/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部高校学生司",
+    "category": "高等教育",
+    "type": "特殊类招生",
+    "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_776/tslxzs/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "学信网考研政策",
+    "category": "高等教育",
+    "type": "研究生类招生",
+    "uri": "https://yz.chsi.com.cn/kyzx/yxzc/",
+    "pattern": {
+      "li": "div.content-l>ul>li",
+      "date": ".span-time",
+      "title": "a",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部高校学生司",
+    "category": "高等教育",
+    "type": "研究生类招生",
+    "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_778/s3261/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部发展规划司",
+    "category": "高等教育",
+    "type": "院校设置",
+    "uri": "http://www.moe.gov.cn/s78/A03/ghs_left/s181/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部高校教育司",
+    "category": "高等教育",
+    "type": "高校创新",
+    "uri": "http://www.moe.gov.cn/s78/A08/gjs_left/s3854/s5672/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "学信网院校政策",
+    "category": "高等教育",
+    "type": "高校综合政策",
+    "uri": "https://yz.chsi.com.cn/kyzx/kydt/",
+    "pattern": {
+      "li": "div.content-l>ul>li",
+      "date": ".span-time",
+      "title": "a",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部学生资助中心",
+    "category": "高等教育",
+    "type": "高校资助",
+    "uri": "http://www.csa.cee.edu.cn/index.php/lists/10.html",
+    "pattern": {
+      "li": "div.about_r>div.col-md-12>a",
+      "date": "a>div.media>div.media-left",
+      "title": "a>div.media>div.media-body>.media-heading",
+      "link": "[href]"
+    }
+  },
+  {
+    "site": "教育部科学技术司",
+    "category": "高等教育",
+    "type": "高校创新",
+    "uri": "http://www.moe.gov.cn/s78/A16/A16_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "edu_policy_crawler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "config": "^3.3.1",
+    "crawler": "^1.2.2",
+    "moment": "^2.27.0",
+    "mongoose": "^5.9.25",
+    "puppeteer": "^5.2.1"
+  }
+}
