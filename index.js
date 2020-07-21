@@ -8,8 +8,6 @@ const getProxy = require('./crawler/src/feedProxy');
 var cron = require('node-cron');
 const sendMail = require('./nodemailer');
 
-const server = require('./server');
-
 var start = async () => {
   try {
     await connectDB();
