@@ -20,6 +20,8 @@ var start = async () => {
   }
 };
 
-cron.schedule('*/5 * * * *', () => {
-  start();
-});
+start();
+
+// cron.schedule('*/5 * * * *', () => {
+
+// });
