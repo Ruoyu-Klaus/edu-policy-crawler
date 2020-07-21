@@ -33,8 +33,3 @@ cron.schedule('*/5 * * * * *', () => {
   // }).catch(console.error);
   console.log(2);
 });
-
-// const port = process.env.PORT || 8000;
-// server.listen(port);
-
-// console.log(`Server is listening on ${port}`);
