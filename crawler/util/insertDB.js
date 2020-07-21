@@ -2,6 +2,7 @@ const Category = require('../../models/Category');
 const Policy = require('../../models/Policy');
 const Type = require('../../models/Type');
 
+const sendMail = require('../../nodemailer');
 // Receive a map with key as title，values as an object containing {category, site, type, date, title, uri, link}
 const insertDB = async data => {
   data = await [...data].map(async policy => {
@@ -43,6 +44,15 @@ const insertDB = async data => {
 
       await thisCategory.save();
       await thisType.save();
+      if (site === '教育部高校学生司') {
+        sendMail({
+          to: 'klaus1201810802@gmail.com',
+          from: '1178570317@qq.com',
+          subject: `${category}:${type}`,
+          text: `${title}`,
+          html: `<strong>${link}</strong>`,
+        }).catch(console.error);
+      }
 
       // Check whether it is a new policy
       if (thisPolicy.lastErrorObject.updatedExisting) {

@@ -6,7 +6,6 @@ const startCrawler = require('./crawler/util/startCrawler');
 const getProxy = require('./crawler/src/feedProxy');
 
 var cron = require('node-cron');
-const sendMail = require('./nodemailer');
 
 var start = async () => {
   try {
@@ -21,13 +20,6 @@ var start = async () => {
   }
 };
 
-cron.schedule('*/5 * * * * *', () => {
-  // sendMail({
-  //   to: 'klaus1201810802@gmail.com',
-  //   from: '1178570317@qq.com',
-  //   subject: `${category}:${type}`,
-  //   text: `${title}`,
-  //   html: `<strong>${link}</strong>`,
-  // }).catch(console.error);
-  console.log(2);
+cron.schedule('*/5 * * * *', () => {
+  start();
 });
