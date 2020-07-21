@@ -5,6 +5,11 @@ const siteQueue = require('./crawler/queue');
 const startCrawler = require('./crawler/util/startCrawler');
 const getProxy = require('./crawler/src/feedProxy');
 
+var cron = require('node-cron');
+const sendMail = require('./smpt');
+
+const server = require('./server');
+
 var start = async () => {
   try {
     await connectDB();
@@ -18,15 +23,18 @@ var start = async () => {
   }
 };
 
-// Regularly execute Crawler
-function interval(callback, delay = 14400000) {
-  return new Promise(resolve => {
-    var id = setInterval(() => {
-      callback(id, resolve);
-    }, delay);
-  });
-}
-interval(async (id, resolve) => {
-  getProxy();
-  start();
+cron.schedule('*/5 * * * * *', () => {
+  // sendMail({
+  //   to: 'klaus1201810802@gmail.com',
+  //   from: '1178570317@qq.com',
+  //   subject: `${category}:${type}`,
+  //   text: `${title}`,
+  //   html: `<strong>${link}</strong>`,
+  // }).catch(console.error);
+  console.log(2);
 });
+
+// const port = process.env.PORT || 8000;
+// server.listen(port);
+
+// console.log(`Server is listening on ${port}`);
