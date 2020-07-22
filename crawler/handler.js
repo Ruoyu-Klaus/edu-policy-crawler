@@ -8,8 +8,17 @@ module.exports = ($, category, type, site, pattern, uri) => {
     const data = new Map();
     if (policies.length > 0) {
       policies.each((i, policy) => {
-        //check whether needs getting attribute's
-        let regexForAttr = new RegExp(/\[(\w+)\]/);
+        /* Pattern Rules:
+          @ Include '[' => children element's attributes
+          @ Start with '[' => current element's attributes
+
+          @ Start without '[' or '(' => children element's innerHTML
+          @ Start with '(' => current element's innerHTML
+        */
+        // check whether needs getting currnt ele's innerHTML
+        let regexForCurInner = new RegExp(/^\((\w+)\)$/);
+        // check whether needs getting attribute's
+        let regexForChildAttr = new RegExp(/\[(\w+)\]/);
         // check whether needs getting current element's attribute's
         let regexForCurAttr = new RegExp(/^\[(\w+)\]$/);
         let date = pattern.date;
@@ -18,10 +27,20 @@ module.exports = ($, category, type, site, pattern, uri) => {
           date = $(policy)
             .attr(date.match(regexForCurAttr)[1])
             .replace(/[\s\-]/g, '');
-        } else if (regexForAttr.test(date)) {
+        } else if (regexForCurInner.test(date)) {
+          date = $(policy)
+            .first()
+            .contents()
+            .filter(function () {
+              return this.nodeType === 3;
+            })
+            .text()
+            .trim()
+            .replace(/[\s\-]/g, '');
+        } else if (regexForChildAttr.test(date)) {
           date = $(policy)
             .find(date)
-            .attr(date.match(regexForAttr)[1])
+            .attr(date.match(regexForChildAttr)[1])
             .replace(/[\s\-]/g, '');
         } else {
           date = $(policy)
@@ -40,18 +59,34 @@ module.exports = ($, category, type, site, pattern, uri) => {
           // Extract Title based on pattern provided
           if (regexForCurAttr.test(title)) {
             title = $(policy).attr(title.match(regexForCurAttr)[1]);
-          } else if (regexForAttr.test(title)) {
-            title = $(policy).find(title).attr(title.match(regexForAttr)[1]);
+          } else if (regexForCurInner.test(title)) {
+            title = $(policy)
+              .first()
+              .contents()
+              .filter(function () {
+                return this.nodeType === 3;
+              })
+              .text()
+              .trim();
+          } else if (regexForChildAttr.test(title)) {
+            title = $(policy).find(title).attr(title.match(regexForChildAttr)[1]);
           } else {
             title = $(policy).find(title).text();
           }
           // Extract the url based on pattern provided
           if (regexForCurAttr.test(rel_url)) {
             rel_url = $(policy).attr(rel_url.match(regexForCurAttr)[1]);
-          } else if (regexForAttr.test(rel_url)) {
+          } else if (regexForCurInner.test(rel_url)) {
             rel_url = $(policy)
-              .find(rel_url)
-              .attr(rel_url.match(regexForAttr)[1]);
+              .first()
+              .contents()
+              .filter(function () {
+                return this.nodeType === 3;
+              })
+              .text()
+              .trim();
+          } else if (regexForChildAttr.test(rel_url)) {
+            rel_url = $(policy).find(rel_url).attr(rel_url.match(regexForChildAttr)[1]);
           } else {
             rel_url = $(policy).find(rel_url).text();
           }

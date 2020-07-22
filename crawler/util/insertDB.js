@@ -44,7 +44,11 @@ const insertDB = async data => {
 
       await thisCategory.save();
       await thisType.save();
-      if (site === '教育部高校学生司') {
+
+      // Check whether it is a new policy
+      if (!thisPolicy.lastErrorObject.updatedExisting) {
+        //...find all users who subscribe this type of policy
+        //...send alert to users
         sendMail({
           to: 'klaus1201810802@gmail.com',
           from: '1178570317@qq.com',
@@ -52,12 +56,6 @@ const insertDB = async data => {
           text: `${title}`,
           html: `<strong>${link}</strong>`,
         }).catch(console.error);
-      }
-
-      // Check whether it is a new policy
-      if (thisPolicy.lastErrorObject.updatedExisting) {
-        //...find all users who subscribe this type of policy
-        //...send alert to users
       }
 
       return thisPolicy.value;

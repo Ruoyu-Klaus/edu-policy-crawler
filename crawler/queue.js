@@ -1,5 +1,6 @@
 const targetSites = require('./src/targetSites.json');
-var proxyPools = require('./src/proxyPools.json');
+var proxyPools = require('../crawler/src/proxyPools.json');
+const fs = require('fs');
 
 const dealResponse = require('./handler');
 const createQueue = require('./util/createQueue');
@@ -13,19 +14,22 @@ for (const i of targetSites) {
 
 const siteQueue = new createQueue(siteMap, (error, res, done) => {
   const { category, type, site, uri, pattern } = res.options;
-  //handle error after failed requesting
+  // Handle error after failed all attemptive requesting
+  // The code below will trigger after the current cralwer finished all tasks
   if (error) {
-    if (proxyPools.length !== 0) {
-      // if encouter errors rescrape this site and those after it by using proxy
+    if (!Boolean(proxyPools.length)) {
+      console.error(error);
+      done();
+    } else {
+      // if encouter errors rescrape this site by using proxy
       let thisSite = element => element.uri === uri;
-      let newSiteQueue = siteQueue.slice(siteQueue.findIndex(thisSite) * 1);
+      let thisSiteIndex = siteQueue.findIndex(thisSite) * 1;
+      let newSiteQueue = siteQueue.slice(thisSiteIndex, thisSiteIndex + 1);
       startCrawler(newSiteQueue, proxyPools[0]);
       proxyPools.shift();
-      fs.writeFile('./util/proxyPools', JSON.stringify(proxyPools), err => {
+      fs.writeFile(`${__dirname}/src/proxyPools.json`, JSON.stringify(proxyPools), err => {
         if (err) throw err;
       });
-    } else {
-      console.error(error);
     }
   } else {
     var $ = res.$;
@@ -34,14 +38,13 @@ const siteQueue = new createQueue(siteMap, (error, res, done) => {
         return insertDB(data);
       })
       .then(result => {
-        console.log(result);
         console.log(`Successfully scraped ${(category, type)} from ${site}`);
+        // @ callback must call done(), otherwise the crawler will stop
         done();
       })
       .catch(reason => {
         console.warn(reason);
-
-        // if encouter errors move on next site
+        // if encouter errors, run a new cralwer start from the next site
         let thisSite = element => element.uri === uri;
         let newSiteQueue = siteQueue.slice(siteQueue.findIndex(thisSite) * 1 + 1);
         startCrawler(newSiteQueue);

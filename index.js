@@ -5,7 +5,7 @@ const siteQueue = require('./crawler/queue');
 const startCrawler = require('./crawler/util/startCrawler');
 const getProxy = require('./crawler/src/feedProxy');
 
-var cron = require('node-cron');
+const cron = require('node-cron');
 
 var start = async () => {
   try {
