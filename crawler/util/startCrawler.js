@@ -1,5 +1,5 @@
 const Crawler = require('crawler');
-const userAgents = require('./userAgents');
+const userAgents = require('../src/userAgents');
 const mongoose = require('mongoose');
 
 module.exports = (siteQueue, proxy = null) => {

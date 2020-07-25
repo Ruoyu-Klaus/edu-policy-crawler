@@ -2,7 +2,6 @@ const targetSites = require('../src/targetSites.json');
 
 const Category = require('../../models/Category');
 const Type = require('../../models/Type');
-// const Policy = require('../../models/Policy');
 
 const createCategoryArray = targetSites => {
   var categories = new Set([...targetSites.map(i => i['category'])]);
@@ -25,6 +24,8 @@ const createTypeArray = targetSites => {
 
 const category_array = createCategoryArray(targetSites);
 const type_array = createTypeArray(targetSites);
+console.table(category_array);
+console.log(type_array);
 
 module.exports = async () => {
   try {

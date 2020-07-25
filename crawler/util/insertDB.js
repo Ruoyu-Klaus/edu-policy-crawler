@@ -1,8 +1,11 @@
+const config = require('config');
+
 const Category = require('../../models/Category');
 const Policy = require('../../models/Policy');
 const Type = require('../../models/Type');
+const User = require('../../models/User');
 
-const sendMail = require('../nodemailer');
+const Mailer = require('./nodemailer');
 // Receive a map with key as title，values as an object containing {category, site, type, date, title, uri, link}
 const insertDB = async data => {
   data = await [...data].map(async policy => {
@@ -22,7 +25,7 @@ const insertDB = async data => {
         },
         { new: true, upsert: true, rawResult: true }
       );
-      // thisPolicy expected structure showing below
+      // thisPolicy structure showing below
       /*
       { lastErrorObject:
         { n: 1,
@@ -35,7 +38,6 @@ const insertDB = async data => {
       ...
         }
       */
-
       thisCategory.policies.includes(thisPolicy.value._id) ||
         thisCategory.policies.push(thisPolicy.value._id);
 
@@ -47,17 +49,25 @@ const insertDB = async data => {
 
       // Check whether it is a new policy
       if (!thisPolicy.lastErrorObject.updatedExisting) {
+        console.log(thisPolicy.value);
         //...find all users who subscribe this type of policy
         //...send alert to users
-        sendMail({
-          to: 'klaus1201810802@gmail.com',
-          from: '1178570317@qq.com',
-          subject: `${category}:${type}`,
-          text: `${title}`,
-          html: `<strong>${link}</strong>`,
-        }).catch(console.error);
-      }
+        const thisType = await Type.findOne({ type }).exec();
+        const users = await User.find({ types: { $all: [thisType._id] } }).exec();
+        if (users) {
+          const recipients = new Map();
+          users.forEach(user => recipients.set(user.email, user.name));
 
+          const transporter = {
+            sender: 'nikolas.douglas11@ethereal.email',
+            password: '4V3mdKvZXk9DE3bAtw',
+            recipients,
+            content: { category, type, title, date, site, uri, link },
+            host: 'smtp.ethereal.email',
+          };
+          new Mailer(transporter).main();
+        }
+      }
       return thisPolicy.value;
     } catch (error) {
       console.error(error);

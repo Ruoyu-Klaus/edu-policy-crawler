@@ -385,7 +385,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/zhongyang/",
     "pattern": {
@@ -397,7 +397,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(北京)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/beijing/",
     "pattern": {
@@ -409,7 +409,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(天津)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/tianjin/",
     "pattern": {
@@ -421,7 +421,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(河北)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/hebei/",
     "pattern": {
@@ -433,7 +433,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(山西)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/shanxi/",
     "pattern": {
@@ -445,7 +445,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(内蒙古)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/neimenggu/",
     "pattern": {
@@ -457,7 +457,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(辽宁)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/liaoning/",
     "pattern": {
@@ -469,7 +469,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(吉林)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/jilin/",
     "pattern": {
@@ -481,7 +481,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(黑龙江)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/heilongjiang/",
     "pattern": {
@@ -493,7 +493,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(上海)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/shanghai/",
     "pattern": {
@@ -505,7 +505,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(江苏)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/jiangsu/",
     "pattern": {
@@ -517,7 +517,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(浙江)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/zhejiang/",
     "pattern": {
@@ -529,7 +529,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(安徽)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/anhui/",
     "pattern": {
@@ -541,7 +541,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(福建)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/fujian/",
     "pattern": {
@@ -553,7 +553,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(江西)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/jiangxi/",
     "pattern": {
@@ -565,7 +565,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(山东)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/shandong/",
     "pattern": {
@@ -577,7 +577,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(河南)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/henan/",
     "pattern": {
@@ -589,7 +589,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(湖北)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/hubei/",
     "pattern": {
@@ -601,7 +601,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(湖南)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/hunan/",
     "pattern": {
@@ -613,7 +613,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(广东)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/guangdong/",
     "pattern": {
@@ -625,7 +625,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(广西)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/guangxi/",
     "pattern": {
@@ -637,7 +637,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(四川)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/sichuan/",
     "pattern": {
@@ -649,7 +649,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(重庆)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/chongqing/",
     "pattern": {
@@ -661,7 +661,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(贵州)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/guizhou/",
     "pattern": {
@@ -673,7 +673,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(云南)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/yunnan/",
     "pattern": {
@@ -685,7 +685,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(西藏)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/xizang/",
     "pattern": {
@@ -697,7 +697,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(陕西)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/shaanxi/",
     "pattern": {
@@ -709,7 +709,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(甘肃)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/gansu/",
     "pattern": {
@@ -721,7 +721,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(青海)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/qinghai/",
     "pattern": {
@@ -733,7 +733,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(宁夏)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/ningxia/",
     "pattern": {
@@ -745,7 +745,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(新疆)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/xinjiang/",
     "pattern": {
@@ -757,7 +757,7 @@
   },
   {
     "site": "全国高等学校学生信息咨询与就业中心(海南)",
-    "category": "高校教育",
+    "category": "高等教育",
     "type": "就业创业",
     "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/hainan/",
     "pattern": {
@@ -765,6 +765,42 @@
       "date": "span",
       "title": "a",
       "link": "a[href]"
+    }
+  },
+  {
+    "site": "中国教育在线",
+    "category": "基础教育",
+    "type": "教育要闻",
+    "uri": "https://chuzhong.eol.cn/news/",
+    "pattern": {
+      "li": "div>.listbox>.list",
+      "date": ".tline>.time",
+      "title": ".fline>a",
+      "link": ".fline>a[href]"
+    }
+  },
+  {
+    "site": "中国教育在线",
+    "category": "高等教育",
+    "type": "高校综合政策",
+    "uri": "https://news.eol.cn/dongtai/",
+    "pattern": {
+      "li": "div>.listbox>.list",
+      "date": ".tline>.time",
+      "title": ".fline>a",
+      "link": ".fline>a[href]"
+    }
+  },
+  {
+    "site": "中国教育在线",
+    "category": "高等教育",
+    "type": "特殊类招生",
+    "uri": "http://yikao.eol.cn/xinwen/",
+    "pattern": {
+      "li": "div>.listbox>.list",
+      "date": ".tline>.time",
+      "title": ".fline>a",
+      "link": ".fline>a[href]"
     }
   }
 ]
