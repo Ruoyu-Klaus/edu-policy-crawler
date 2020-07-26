@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const { MONGOURI } = require('./config/keys');
 const connectDB = require('./config/db');
 const syncDB = require('./crawler/util/syncDB');
+
 const siteQueue = require('./crawler/queue');
 const startCrawler = require('./crawler/util/startCrawler');
 const getProxy = require('./crawler/src/feedProxy');
@@ -9,7 +11,7 @@ const cron = require('node-cron');
 
 var start = async () => {
   try {
-    await connectDB();
+    await connectDB(MONGOURI);
     await syncDB();
     console.log('Categories and Types in the database has updated...');
     startCrawler(siteQueue);
@@ -20,7 +22,7 @@ var start = async () => {
   }
 };
 // Start Directly
-start();
+// start();
 
 // Run code every 3 hours
 // cron.schedule('* */3 * * *', () => {
