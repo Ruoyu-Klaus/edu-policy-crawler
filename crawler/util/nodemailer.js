@@ -22,6 +22,7 @@ class Mailer {
       },
       (err, info) => {
         if (err) console.error(err);
+        console.log(`Message has delivered...  ID: ${info.messageId}`);
       }
     );
   }

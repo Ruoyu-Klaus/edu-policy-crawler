@@ -7,10 +7,13 @@ const TypeSchema = new mongoose.Schema({
   added_date: { type: Date, default: Date.now },
 });
 
-TypeSchema.statics.clearPolicyRef = function (policyId) {
+// @ Params : specific policy mongo ObjectId  | [callback]
+// @ Purpose: when a policy is deleted, need to call this to delete reference in this doc
+TypeSchema.statics.clearPolicyRef = function (policyId, cb) {
   return this.findOneAndUpdate(
     { policies: { $in: [policyId] } },
-    { $pull: { policies: { $in: [policyId] } } }
+    { $pull: { policies: { $in: [policyId] } } },
+    cb
   );
 };
 

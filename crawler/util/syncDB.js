@@ -32,34 +32,37 @@ const syncDB = () => {
   return new Promise((resolve, reject) => {
     let updateType = type_array.map(i => {
       const { type, category } = i;
-      return Type.findOneAndUpdate({ type }, { category }, { new: true, upsert: true });
+      return Type.findOneAndUpdate({ type }, { category }, { new: true, upsert: true }).exec();
     });
     Promise.all(updateType).then(allTypes => {
       let updateCategory = category_array.map(category => {
         let types = allTypes.filter(type => type.category === category);
-        return Category.findOneAndUpdate({ category }, { types }, { new: true, upsert: true });
+        return Category.findOneAndUpdate(
+          { category },
+          { types },
+          { new: true, upsert: true }
+        ).exec();
       });
+      // Remove outdated policies from database
       Promise.all(updateCategory)
         .then(async allCategory => {
-          const outdatePolicies = await Policy.find({
+          const outdatedPolicies = await Policy.find({
             date: {
               $lte: moment().subtract(90, 'days'),
             },
           }).exec();
-          let outdatePoliciesId = outdatePolicies.map(i => i._id);
-          let deletePolicies = outdatePoliciesId.map(id => {
-            return Policy.deleteOne(id);
+          const outdatedPoliciesId = outdatedPolicies.map(i => i._id);
+          let deletePolicies = outdatedPoliciesId.map(id => {
+            return Policy.deleteOne({ id }).exec();
           });
           Promise.all(deletePolicies)
-            .then(result => resolve(allCategory))
-            .catch(err => reject(err));
+            .then(_ => resolve(allCategory))
+            .catch(error => reject(error));
         })
         .catch(error => {
           reject(error);
         });
     });
   });
-
-  // if necessary, remove policies which are more than a month ago
 };
 module.exports = syncDB;
