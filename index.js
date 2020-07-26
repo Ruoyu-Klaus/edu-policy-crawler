@@ -20,7 +20,7 @@ var start = async () => {
   }
 };
 // Start Directly
-// start();
+start();
 
 // Run code every 3 hours
 // cron.schedule('* */3 * * *', () => {

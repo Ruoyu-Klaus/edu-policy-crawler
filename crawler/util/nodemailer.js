@@ -2,27 +2,19 @@
 const nodemailer = require('nodemailer');
 
 class Mailer {
-  constructor({ sender, password, recipients, content, host, port = 587 }) {
-    this.sender = sender;
+  constructor(config, content) {
+    this.sender = config.auth.user;
+    this.transport = nodemailer.createTransport(config);
     this.content = content;
-    this.transport = nodemailer.createTransport({
-      host,
-      port,
-      auth: {
-        user: sender,
-        pass: password,
-      },
-    });
-    this.recipients = recipients;
   }
-  send(email, name) {
+  send(toEmail, toName) {
     this.transport.sendMail(
       {
         from: this.sender,
-        to: email,
+        to: toEmail,
         subject: '您有新的政策',
         html: `<div> 
-        <h3>Dear ${name}:</h3>
+        <h3>Dear ${toName}:</h3>
         <br>
         <p>a new policy has been founded =><p>
         <span><a href=${this.content.link}>${this.content.title}</a></span>
@@ -33,8 +25,8 @@ class Mailer {
       }
     );
   }
-  main() {
-    [...this.recipients].forEach(([email, name]) => {
+  main(recipients) {
+    [...recipients].forEach(([email, name]) => {
       this.send(email, name);
     });
   }

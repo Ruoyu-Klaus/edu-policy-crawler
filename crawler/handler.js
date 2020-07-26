@@ -1,5 +1,5 @@
 const url = require('url');
-var moment = require('moment');
+const moment = require('moment');
 
 // Receive Cherrio loaded HTML as $, category, type , site ,uri, pattern(li,link,titie,date)
 module.exports = ($, category, type, site, pattern, uri) => {

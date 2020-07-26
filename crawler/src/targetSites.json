@@ -770,7 +770,7 @@
   {
     "site": "中国教育在线",
     "category": "基础教育",
-    "type": "教育要闻",
+    "type": "基教要闻",
     "uri": "https://chuzhong.eol.cn/news/",
     "pattern": {
       "li": "div>.listbox>.list",

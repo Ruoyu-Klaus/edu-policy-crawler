@@ -6,6 +6,7 @@ const Type = require('../../models/Type');
 const User = require('../../models/User');
 
 const Mailer = require('./nodemailer');
+
 // Receive a map with key as title，values as an object containing {category, site, type, date, title, uri, link}
 const insertDB = async data => {
   data = await [...data].map(async policy => {
@@ -59,13 +60,16 @@ const insertDB = async data => {
           users.forEach(user => recipients.set(user.email, user.name));
 
           const transporter = {
-            sender: 'nikolas.douglas11@ethereal.email',
-            password: '4V3mdKvZXk9DE3bAtw',
-            recipients,
-            content: { category, type, title, date, site, uri, link },
             host: 'smtp.ethereal.email',
+            port: 587,
+            auth: {
+              user: 'nikolas.douglas11@ethereal.email',
+              pass: '4V3mdKvZXk9DE3bAtw',
+            },
           };
-          new Mailer(transporter).main();
+          const content = { category, type, title, date, site, uri, link };
+          const sender = new Mailer(transporter, content);
+          sender.main(recipients);
         }
       }
       return thisPolicy.value;
