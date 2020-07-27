@@ -8,12 +8,8 @@ const insertDB = require('./util/insertDB');
 const startCrawler = require('./util/startCrawler');
 
 const siteMap = new Map();
-// for (const i of targetSites) {
-//   siteMap.set(i['uri'], i);
-// }
 targetSites.forEach(site => siteMap.set(site['uri'], site));
 
-console.log(siteMap);
 const siteQueue = new createQueue(siteMap, (error, res, done) => {
   const { category, type, site, uri, pattern } = res.options;
   // Handle error after failed all attemptive requesting
