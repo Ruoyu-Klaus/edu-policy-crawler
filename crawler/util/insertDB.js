@@ -6,7 +6,8 @@ const User = require('../../models/User');
 
 // Import MailSender Module
 const Mailer = require('./nodemailer');
-const { TRANSPORTER } = require('../../config/keys');
+const { TRANSPORTERDEV } = require('../../config/keys');
+const transporter = JSON.parse(TRANSPORTERDEV);
 
 // Receive a map with key as title，values as an object containing {category, site, type, date, title, uri, link}
 const insertDB = async data => {
@@ -61,7 +62,7 @@ const insertDB = async data => {
           users.forEach(user => recipients.set(user.email, user.name));
 
           const content = { category, type, title, date, site, uri, link };
-          const sender = new Mailer(TRANSPORTER, content);
+          const sender = new Mailer(transporter, content);
           sender.main(recipients);
         }
       }

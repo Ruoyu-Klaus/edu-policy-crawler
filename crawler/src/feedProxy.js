@@ -3,7 +3,9 @@ const puppeteer = require('puppeteer');
 
 const getProxy = async () => {
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
     const page = await browser.newPage();
     await page.goto('http://free-proxy.cz/en/');
     await page.waitForSelector('#proxy_list>tbody>tr>td');

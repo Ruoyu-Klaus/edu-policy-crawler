@@ -1,11 +1,11 @@
 if (process.env === 'production') {
   module.exports = {
     MONGOURI: process.env.MONGOURI,
-    TRANSPORTER: process.env.TRANSPORTER,
+    TRANSPORTERDEV: process.env.TRANSPORTERDEV,
   };
 } else {
   module.exports = {
     MONGOURI: process.env.MONGOURI,
-    TRANSPORTER: process.env.TRANSPORTER,
+    TRANSPORTERDEV: process.env.TRANSPORTERDEV,
   };
 }
