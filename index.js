@@ -1,15 +1,18 @@
+// DB
 const mongoose = require('mongoose');
 const { MONGOURI } = require('./config/keys');
 const connectDB = require('./config/db');
 const syncDB = require('./crawler/util/syncDB');
 
+// Crawler
 const siteQueue = require('./crawler/queue');
 const startCrawler = require('./crawler/util/startCrawler');
 const getProxy = require('./crawler/src/feedProxy');
 
+// Scheduler
 const cron = require('node-cron');
 
-var start = async () => {
+const start = async () => {
   try {
     await connectDB(MONGOURI);
     await syncDB();
@@ -37,11 +40,11 @@ var start = async () => {
 // });
 
 // Run code at every 6:00am 12:00pm 18:00am 0:00am
-// cron.schedule(
-//   '* 6,12,18,0 * * *',
-//   () => {
-//     getProxy();
-//     start();
-//   },
-//   { scheduled: true, timezone: 'Asia/Shanghai' }
-// );
+cron.schedule(
+  '* 6,12,18,0 * * *',
+  () => {
+    getProxy();
+    start();
+  },
+  { scheduled: true, timezone: 'Asia/Shanghai' }
+);
