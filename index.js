@@ -28,7 +28,7 @@ const start = async () => {
 // start();
 // Run code at every 6:00am 12:00pm 18:00am 0:00am
 cron.schedule(
-  '00 6,12,18,0 * * *',
+  '0 6,12,18,0 * * *',
   () => {
     getProxy();
     start();
