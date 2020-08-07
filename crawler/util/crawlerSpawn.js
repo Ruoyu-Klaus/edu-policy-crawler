@@ -11,7 +11,7 @@ module.exports = (siteQueue, proxy = null) => {
     retries: 3,
     retryTimeout: 2000,
   });
-  crawler.queue([...siteQueue]);
+  crawler.queue(siteQueue);
   crawler.on('schedule', function (options) {
     options.proxy = proxy;
   });

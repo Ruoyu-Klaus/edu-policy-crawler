@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { model } = require('./Category');
 
 const PolicySchema = new mongoose.Schema({
   category_id: { type: mongoose.Schema.Types.ObjectId, ref: 'categories' },

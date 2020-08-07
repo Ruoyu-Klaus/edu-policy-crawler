@@ -2,10 +2,10 @@ const targetSites = require('./src/targetSites.json');
 var proxyPools = require('../crawler/src/proxyPools.json');
 const fs = require('fs');
 
-const dealResponse = require('./handler');
 const createQueue = require('./util/createQueue');
-const insertDB = require('./util/insertDB');
-const startCrawler = require('./util/startCrawler');
+const parser = require('./parser.js');
+const insertDB = require('./main/insertDB');
+const crawlerSpawn = require('./util/crawlerSpawn');
 
 const siteMap = new Map();
 targetSites.forEach(site => siteMap.set(site['uri'], site));
@@ -23,7 +23,7 @@ const siteQueue = new createQueue(siteMap, (error, res, done) => {
       let thisSite = element => element.uri === uri;
       let thisSiteIndex = siteQueue.findIndex(thisSite) * 1;
       let newSiteQueue = siteQueue.slice(thisSiteIndex, thisSiteIndex + 1);
-      startCrawler(newSiteQueue, proxyPools[0]);
+      crawlerSpawn(newSiteQueue, proxyPools[0]);
       proxyPools.shift();
       fs.writeFile(`${__dirname}/src/proxyPools.json`, JSON.stringify(proxyPools), err => {
         if (err) throw err;
@@ -31,7 +31,7 @@ const siteQueue = new createQueue(siteMap, (error, res, done) => {
     }
   } else {
     var $ = res.$;
-    dealResponse($, category, type, site, pattern, uri)
+    parser($, category, type, site, pattern, uri)
       .then(data => {
         return insertDB(data);
       })
@@ -45,7 +45,7 @@ const siteQueue = new createQueue(siteMap, (error, res, done) => {
         // if encouter errors, run a new cralwer start from the next site
         let thisSite = element => element.uri === uri;
         let newSiteQueue = siteQueue.slice(siteQueue.findIndex(thisSite) * 1 + 1);
-        startCrawler(newSiteQueue);
+        crawlerSpawn(newSiteQueue);
       });
   }
 }).create();

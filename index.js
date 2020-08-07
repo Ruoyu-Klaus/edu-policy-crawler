@@ -6,7 +6,7 @@ const syncDB = require('./crawler/util/syncDB');
 
 // Crawler
 const siteQueue = require('./crawler/queue');
-const startCrawler = require('./crawler/util/startCrawler');
+const crawlerSpawn = require('./crawler/util/crawlerSpawn');
 const getProxy = require('./crawler/src/feedProxy');
 
 // Scheduler
@@ -17,7 +17,7 @@ const start = async () => {
     await connectDB(MONGOURI);
     await syncDB();
     console.log('Categories and Types in the database has updated...');
-    startCrawler(siteQueue);
+    crawlerSpawn(siteQueue);
   } catch (error) {
     mongoose.connection.close();
     console.error(error);
@@ -25,16 +25,17 @@ const start = async () => {
   }
 };
 // Start Directly
-// start();
+getProxy();
+start();
 // Run code at every 6:00am 12:00pm 18:00am 0:00am
-cron.schedule(
-  '0 6,12,18,0 * * *',
-  () => {
-    getProxy();
-    start();
-  },
-  { scheduled: true, timezone: 'Asia/Shanghai' }
-);
+// cron.schedule(
+//   '0 6,12,18,0 * * *',
+//   () => {
+//     getProxy();
+//     start();
+//   },
+//   { scheduled: true, timezone: 'Asia/Shanghai' }
+// );
 
 // Run code every 3 hours
 // cron.schedule('* */3 * * *', () => {

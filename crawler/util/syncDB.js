@@ -1,5 +1,4 @@
 const targetSites = require('../src/targetSites.json');
-
 const moment = require('moment');
 
 const Category = require('../../models/Category');
@@ -43,6 +42,7 @@ const syncDB = () => {
           { new: true, upsert: true }
         ).exec();
       });
+
       // Remove outdated policies from database
       Promise.all(updateCategory)
         .then(async allCategory => {
