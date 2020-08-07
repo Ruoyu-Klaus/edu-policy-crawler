@@ -3,31 +3,7 @@
     "site": "教育部基础教育司",
     "category": "基础教育",
     "type": "义务教育",
-    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/moe_706/",
-    "pattern": {
-      "li": "div#wcmpagehtml>dl>dd",
-      "date": "span",
-      "title": "a[title]",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "教育部基础教育司",
-    "category": "基础教育",
-    "type": "学前教育",
-    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/moe_705/",
-    "pattern": {
-      "li": "div#wcmpagehtml>dl>dd",
-      "date": "span",
-      "title": "a[title]",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "教育部基础教育司",
-    "category": "基础教育",
-    "type": "高中教育",
-    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/s3732/",
+    "uri": "http://www.moe.gov.cn/s78/A06/A06_zcwj/",
     "pattern": {
       "li": "div#wcmpagehtml>dl>dd",
       "date": "span",
@@ -48,22 +24,22 @@
     }
   },
   {
-    "site": "教育部基础教育司",
+    "site": "教育部思想政治工作司",
     "category": "特殊教育",
-    "type": "德育与校外教育",
-    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/moe_710/",
+    "type": "思政教育",
+    "uri": "http://www.moe.gov.cn/s78/A12/A12_zcwj/",
     "pattern": {
-      "li": "div#wcmpagehtml>dl>dd",
+      "li": "div#wcmpagehtml>ul>li",
       "date": "span",
       "title": "a[title]",
       "link": "a[href]"
     }
   },
   {
-    "site": "教育部思想政治科学司",
+    "site": "教育部民族教育司",
     "category": "特殊教育",
-    "type": "思政教育",
-    "uri": "http://www.moe.gov.cn/s78/A12/A12_zcwj/",
+    "type": "民族教育",
+    "uri": "http://www.moe.gov.cn/s78/A09/A09_zcwj/",
     "pattern": {
       "li": "div#wcmpagehtml>ul>li",
       "date": "span",
@@ -84,30 +60,6 @@
     }
   },
   {
-    "site": "教育部基础教育司",
-    "category": "特殊教育",
-    "type": "残疾人教育",
-    "uri": "http://www.moe.gov.cn/s78/A06/jcys_left/moe_709/",
-    "pattern": {
-      "li": "div#wcmpagehtml>dl>dd",
-      "date": "span",
-      "title": "a[title]",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "教育部民族教育司",
-    "category": "特殊教育",
-    "type": "民族教育",
-    "uri": "http://www.moe.gov.cn/s78/A09/A09_zcwj/",
-    "pattern": {
-      "li": "div#wcmpagehtml>ul>li",
-      "date": "span",
-      "title": "a[title]",
-      "link": "a[href]"
-    }
-  },
-  {
     "site": "教育部职业教育与成人教育司",
     "category": "特殊教育",
     "type": "职业与成人教育",
@@ -117,6 +69,90 @@
       "date": "span",
       "title": "a[title]",
       "link": "a[href]"
+    }
+  },
+  {
+    "site": "中央文件",
+    "category": "综合",
+    "type": "综合政策",
+    "uri": "http://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1778/",
+    "pattern": {
+      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "其他部门文件",
+    "category": "综合",
+    "type": "综合政策",
+    "uri": "http://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1779/",
+    "pattern": {
+      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部学生资助中心",
+    "category": "综合",
+    "type": "学生资助",
+    "uri": "http://www.xszz.cee.edu.cn/index.php/lists/10.html",
+    "pattern": {
+      "li": "div.about_r>div.col-md-12>a",
+      "date": "a>div.media>div.media-left",
+      "title": "a>div.media>div.media-body>.media-heading",
+      "link": "[href]"
+    }
+  },
+  {
+    "site": "教育部学生资助中心",
+    "category": "综合",
+    "type": "学生资助",
+    "uri": "http://www.xszz.cee.edu.cn/index.php/lists/11.html",
+    "pattern": {
+      "li": "div.about_r>div.col-md-12>a",
+      "date": "a>div.media>div.media-left",
+      "title": "a>div.media>div.media-body>.media-heading",
+      "link": "[href]"
+    }
+  },
+  {
+    "site": "教育部学生资助中心",
+    "category": "综合",
+    "type": "学生资助",
+    "uri": "http://www.xszz.cee.edu.cn/index.php/lists/12.html",
+    "pattern": {
+      "li": "div.about_r>div.col-md-12>a",
+      "date": "a>div.media>div.media-left",
+      "title": "a>div.media>div.media-body>.media-heading",
+      "link": "[href]"
+    }
+  },
+  {
+    "site": "教育部学生资助中心",
+    "category": "综合",
+    "type": "学生资助",
+    "uri": "http://www.xszz.cee.edu.cn/index.php/lists/13.html",
+    "pattern": {
+      "li": "div.about_r>div.col-md-12>a",
+      "date": "a>div.media>div.media-left",
+      "title": "a>div.media>div.media-body>.media-heading",
+      "link": "[href]"
+    }
+  },
+  {
+    "site": "教育部学生资助中心",
+    "category": "综合",
+    "type": "学生资助",
+    "uri": "http://www.xszz.cee.edu.cn/index.php/lists/14.html",
+    "pattern": {
+      "li": "div.about_r>div.col-md-12>a",
+      "date": "a>div.media>div.media-left",
+      "title": "a>div.media>div.media-body>.media-heading",
+      "link": "[href]"
     }
   },
   {
@@ -156,18 +192,6 @@
     }
   },
   {
-    "site": "教育部时政要闻",
-    "category": "综合",
-    "type": "教育要闻",
-    "uri": "http://www.moe.gov.cn/jyb_sy/shizheng/",
-    "pattern": {
-      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
-      "date": "span",
-      "title": "a[title]",
-      "link": "a[href]"
-    }
-  },
-  {
     "site": "教育部教育要闻",
     "category": "综合",
     "type": "教育要闻",
@@ -180,22 +204,10 @@
     }
   },
   {
-    "site": "中央文件",
+    "site": "教育部时政要闻",
     "category": "综合",
-    "type": "综合政策",
-    "uri": "http://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1778/",
-    "pattern": {
-      "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
-      "date": "span",
-      "title": "a[title]",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "其他部门文件",
-    "category": "综合",
-    "type": "综合政策",
-    "uri": "http://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1779/",
+    "type": "教育要闻",
+    "uri": "http://www.moe.gov.cn/jyb_sy/shizheng/",
     "pattern": {
       "li": "div#wcmpagehtml>div.scy_lbsj-right-nr>ul>li",
       "date": "span",
@@ -207,7 +219,7 @@
     "site": "教育部财务司",
     "category": "综合",
     "type": "部门预算",
-    "uri": "http://www.moe.gov.cn/s78/A05/A05_zcwj/",
+    "uri": "http://www.moe.gov.cn/s78/A05/cws_left/s7498/s7499/",
     "pattern": {
       "li": "div#wcmpagehtml>ul>li",
       "date": "span",
@@ -216,24 +228,48 @@
     }
   },
   {
-    "site": "教育部高校教育司",
-    "category": "高等教育",
-    "type": "专业设置",
-    "uri": "http://www.moe.gov.cn/s78/A08/gjs_left/moe_1034/",
+    "site": "中国教育在线",
+    "category": "高校教育",
+    "type": "特殊类招生",
+    "uri": "http://yikao.eol.cn/xinwen/",
     "pattern": {
-      "li": "div#wcmpagehtml>ul>li",
+      "li": "div>.listbox>.list",
+      "date": ".tline>.time",
+      "title": ".fline>a",
+      "link": ".fline>a[href]"
+    }
+  },
+  {
+    "site": "全国高等学校学生信息咨询与就业中心",
+    "category": "高校教育",
+    "type": "就业创业",
+    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/zhongyang/",
+    "pattern": {
+      "li": "div>ul.art_list>li.clearfix",
       "date": "span",
-      "title": "a[title]",
+      "title": "a",
       "link": "a[href]"
     }
   },
   {
-    "site": "教育部学位管理和研究生教育司",
-    "category": "高等教育",
-    "type": "专业设置",
-    "uri": "http://www.moe.gov.cn/s78/A22/A22_zcwj/",
+    "site": "学信网考研政策",
+    "category": "高校教育",
+    "type": "研究生类招生",
+    "uri": "https://yz.chsi.com.cn/kyzx/yxzc/",
     "pattern": {
-      "li": "div#wcmpagehtml>dl>dd",
+      "li": "div.content-l>ul>li",
+      "date": "span",
+      "title": "a",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部发展规划司",
+    "category": "高校教育",
+    "type": "院校专业设置",
+    "uri": "http://www.moe.gov.cn/s78/A03/ghs_left/s181/",
+    "pattern": {
+      "li": "div#wcmpagehtml>ul>li",
       "date": "span",
       "title": "a[title]",
       "link": "a[href]"
@@ -241,7 +277,7 @@
   },
   {
     "site": "教育部国际合作与交流司",
-    "category": "高等教育",
+    "category": "高校教育",
     "type": "国际合作",
     "uri": "http://www.moe.gov.cn/s78/A20/A20_zcwj/",
     "pattern": {
@@ -252,8 +288,32 @@
     }
   },
   {
+    "site": "教育部学位管理和研究生教育司",
+    "category": "高校教育",
+    "type": "院校专业设置",
+    "uri": "http://www.moe.gov.cn/s78/A22/A22_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
+    "site": "教育部科学技术司",
+    "category": "高校教育",
+    "type": "高校创新",
+    "uri": "http://www.moe.gov.cn/s78/A16/A16_zcwj/",
+    "pattern": {
+      "li": "div#wcmpagehtml>dl>dd",
+      "date": "span",
+      "title": "a[title]",
+      "link": "a[href]"
+    }
+  },
+  {
     "site": "教育部高校学生司",
-    "category": "高等教育",
+    "category": "高校教育",
     "type": "就业创业",
     "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_780/s3265/",
     "pattern": {
@@ -265,8 +325,8 @@
   },
   {
     "site": "教育部高校学生司",
-    "category": "高等教育",
-    "type": "成人本专科类招生",
+    "category": "高校教育",
+    "type": "特殊类招生",
     "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_777/",
     "pattern": {
       "li": "div#wcmpagehtml>ul>li",
@@ -277,7 +337,7 @@
   },
   {
     "site": "教育部高校学生司",
-    "category": "高等教育",
+    "category": "高校教育",
     "type": "普通类招生",
     "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_776/s3258/",
     "pattern": {
@@ -289,7 +349,7 @@
   },
   {
     "site": "教育部高校学生司",
-    "category": "高等教育",
+    "category": "高校教育",
     "type": "特殊类招生",
     "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_776/tslxzs/",
     "pattern": {
@@ -300,20 +360,8 @@
     }
   },
   {
-    "site": "学信网考研政策",
-    "category": "高等教育",
-    "type": "研究生类招生",
-    "uri": "https://yz.chsi.com.cn/kyzx/yxzc/",
-    "pattern": {
-      "li": "div.content-l>ul>li",
-      "date": ".span-time",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
     "site": "教育部高校学生司",
-    "category": "高等教育",
+    "category": "高校教育",
     "type": "研究生类招生",
     "uri": "http://www.moe.gov.cn/s78/A15/xss_left/moe_778/s3261/",
     "pattern": {
@@ -324,10 +372,10 @@
     }
   },
   {
-    "site": "教育部发展规划司",
-    "category": "高等教育",
-    "type": "院校设置",
-    "uri": "http://www.moe.gov.cn/s78/A03/ghs_left/s181/",
+    "site": "教育部高等教育司",
+    "category": "高校教育",
+    "type": "院校专业设置",
+    "uri": "http://www.moe.gov.cn/s78/A08/gjs_left/moe_1034/",
     "pattern": {
       "li": "div#wcmpagehtml>ul>li",
       "date": "span",
@@ -336,8 +384,8 @@
     }
   },
   {
-    "site": "教育部高校教育司",
-    "category": "高等教育",
+    "site": "教育部高等教育司",
+    "category": "高校教育",
     "type": "高校创新",
     "uri": "http://www.moe.gov.cn/s78/A08/gjs_left/s3854/s5672/",
     "pattern": {
@@ -345,462 +393,6 @@
       "date": "span",
       "title": "a[title]",
       "link": "a[href]"
-    }
-  },
-  {
-    "site": "学信网院校政策",
-    "category": "高等教育",
-    "type": "高校综合政策",
-    "uri": "https://yz.chsi.com.cn/kyzx/kydt/",
-    "pattern": {
-      "li": "div.content-l>ul>li",
-      "date": ".span-time",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "教育部学生资助中心",
-    "category": "高等教育",
-    "type": "高校资助",
-    "uri": "http://www.csa.cee.edu.cn/index.php/lists/10.html",
-    "pattern": {
-      "li": "div.about_r>div.col-md-12>a",
-      "date": "a>div.media>div.media-left",
-      "title": "a>div.media>div.media-body>.media-heading",
-      "link": "[href]"
-    }
-  },
-  {
-    "site": "教育部科学技术司",
-    "category": "高等教育",
-    "type": "高校创新",
-    "uri": "http://www.moe.gov.cn/s78/A16/A16_zcwj/",
-    "pattern": {
-      "li": "div#wcmpagehtml>dl>dd",
-      "date": "span",
-      "title": "a[title]",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/zhongyang/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(北京)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/beijing/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(天津)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/tianjin/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(河北)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/hebei/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(山西)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/shanxi/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(内蒙古)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/neimenggu/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(辽宁)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/liaoning/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(吉林)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/jilin/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(黑龙江)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/heilongjiang/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(上海)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/shanghai/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(江苏)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/jiangsu/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(浙江)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/zhejiang/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(安徽)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/anhui/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(福建)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/fujian/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(江西)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/jiangxi/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(山东)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/shandong/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(河南)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/henan/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(湖北)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/hubei/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(湖南)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/hunan/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(广东)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/guangdong/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(广西)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/guangxi/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(四川)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/sichuan/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(重庆)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/chongqing/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(贵州)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/guizhou/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(云南)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/yunnan/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(西藏)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/xizang/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(陕西)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/shaanxi/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(甘肃)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/gansu/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(青海)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/qinghai/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(宁夏)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/ningxia/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(新疆)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/xinjiang/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "全国高等学校学生信息咨询与就业中心(海南)",
-    "category": "高等教育",
-    "type": "就业创业",
-    "uri": "https://chesicc.chsi.com.cn/zxgw/jycyzc/hainan/",
-    "pattern": {
-      "li": "div>ul.art_list>li.clearfix",
-      "date": "span",
-      "title": "a",
-      "link": "a[href]"
-    }
-  },
-  {
-    "site": "中国教育在线",
-    "category": "基础教育",
-    "type": "基教要闻",
-    "uri": "https://chuzhong.eol.cn/news/",
-    "pattern": {
-      "li": "div>.listbox>.list",
-      "date": ".tline>.time",
-      "title": ".fline>a",
-      "link": ".fline>a[href]"
-    }
-  },
-  {
-    "site": "中国教育在线",
-    "category": "高等教育",
-    "type": "高校综合政策",
-    "uri": "https://news.eol.cn/dongtai/",
-    "pattern": {
-      "li": "div>.listbox>.list",
-      "date": ".tline>.time",
-      "title": ".fline>a",
-      "link": ".fline>a[href]"
-    }
-  },
-  {
-    "site": "中国教育在线",
-    "category": "高等教育",
-    "type": "特殊类招生",
-    "uri": "http://yikao.eol.cn/xinwen/",
-    "pattern": {
-      "li": "div>.listbox>.list",
-      "date": ".tline>.time",
-      "title": ".fline>a",
-      "link": ".fline>a[href]"
     }
   }
 ]

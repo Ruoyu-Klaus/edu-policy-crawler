@@ -1,7 +1,7 @@
 'use strict';
 const nodemailer = require('nodemailer');
 
-// It is called in /crawler/util/inserDB.js
+// It is called in /crawler/main/inserDB.js
 class Mailer {
   constructor(config, content) {
     this.sender = config.auth.user;
