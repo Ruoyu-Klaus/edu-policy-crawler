@@ -16,7 +16,9 @@ module.exports = (siteQueue, proxy = null) => {
     options.proxy = proxy;
   });
   crawler.on('drain', function () {
-    mongoose.connection.close();
-    console.log('------------End---------------');
+    setTimeout(() => {
+      mongoose.connection.close();
+      console.log('------------End---------------');
+    });
   });
 };

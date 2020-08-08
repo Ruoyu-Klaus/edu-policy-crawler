@@ -16,16 +16,19 @@ const start = async () => {
   try {
     await connectDB(MONGOURI);
     await syncDB();
+    let policies = await mongoose.model('categories').find({}).select(['-policies', '-__v']).exec();
+    console.log(policies);
     console.log('Categories and Types in the database has updated...');
-    crawlerSpawn(siteQueue);
+    // crawlerSpawn(siteQueue[0]);
   } catch (error) {
     mongoose.connection.close();
     console.error(error);
     process.exit(1);
   }
 };
+
 // Start Directly
-getProxy();
+// getProxy();
 start();
 // Run code at every 6:00am 12:00pm 18:00am 0:00am
 // cron.schedule(

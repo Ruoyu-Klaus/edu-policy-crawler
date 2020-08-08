@@ -5,6 +5,7 @@ const moment = require('moment');
 module.exports = ($, category, type, site, pattern, uri) => {
   return new Promise((resolve, reject) => {
     const policies = $(pattern.li);
+
     const data = new Map();
     if (policies.length > 0) {
       policies.each((i, policy) => {

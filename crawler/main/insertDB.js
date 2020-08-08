@@ -16,18 +16,20 @@ const insertDB = async data => {
     try {
       let thisCategory = await Category.findOne({ category });
       let thisType = await Type.findOne({ type });
+
       let thisPolicy = await Policy.findOneAndUpdate(
         { link },
         {
           title,
+          date,
           category_id: thisCategory._id,
           type_id: thisType._id,
           site,
-          date,
           site_url: uri,
         },
         { new: true, upsert: true, rawResult: true }
       );
+
       // thisPolicy structure showing below
       /*
       { lastErrorObject:
@@ -53,6 +55,7 @@ const insertDB = async data => {
       // Check whether it is a new policy
       if (!thisPolicy.lastErrorObject.updatedExisting) {
         console.log(thisPolicy.value);
+
         //...find all users who subscribe this type of policy
         //...send alert to users
         const thisType = await Type.findOne({ type }).exec();

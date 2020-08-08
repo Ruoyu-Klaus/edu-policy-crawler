@@ -5,7 +5,7 @@ if (process.env === 'production') {
   };
 } else {
   module.exports = {
-    MONGOURI: process.env.MONGOURI,
+    MONGOURI: process.env.MONGOURIDEV,
     TRANSPORTERDEV: process.env.TRANSPORTERDEV,
   };
 }
