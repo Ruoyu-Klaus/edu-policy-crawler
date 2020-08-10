@@ -29,6 +29,22 @@ const category_array = createCategoryArray(targetSites);
 const type_array = createTypeArray(targetSites);
 
 const syncDB = () => {
+  const removeCategorys = async () => {
+    try {
+      let allCategorys = await Category.find({}, 'category');
+      let removeCategorysArr = allCategorys
+        .filter(category => !category_array.includes(category.category))
+        .map(category => category._id);
+      // let removeCategorysArrText = allCategorys
+      //   .filter(category => !category_array.includes(category.category))
+      //   .map(category => category.category);
+      if (Boolean(removeCategorysArr.length)) {
+        await Category.deleteMany({ _id: { $in: removeCategorysArr } }).exec();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const removeTypes = () => {
     return new Promise(async (resolve, reject) => {
       try {
@@ -49,22 +65,6 @@ const syncDB = () => {
         reject(error);
       }
     });
-  };
-  const removeCategorys = async () => {
-    try {
-      let allCategorys = await Category.find({}, 'category');
-      let removeCategorysArr = allCategorys
-        .filter(category => !category_array.includes(category.category))
-        .map(category => category._id);
-      // let removeCategorysArrText = allCategorys
-      //   .filter(category => !category_array.includes(category.category))
-      //   .map(category => category.category);
-      if (Boolean(removeCategorysArr.length)) {
-        await Category.deleteMany({ _id: { $in: removeCategorysArr } }).exec();
-      }
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   const updateTypeAndCategory = async () => {
@@ -113,8 +113,8 @@ const syncDB = () => {
     return outdatedPoliciesId;
   };
   const main = async () => {
-    await removeTypes();
     await removeCategorys();
+    await removeTypes();
     await removeOutdatedPolicies();
     await updateTypeAndCategory();
     return;

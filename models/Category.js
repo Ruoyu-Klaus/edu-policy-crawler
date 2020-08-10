@@ -23,11 +23,11 @@ CategorySchema.pre('deleteMany', async function (next) {
     await mongoose
       .model('users')
       .updateMany(
-        { subscriptions: { $in: categoriesId } },
-        { $pull: { subscriptions: { $in: categoriesId } } }
+        { subscriptions: { category: { $in: categoriesId } } },
+        { $pull: { subscriptions: { category: { $in: categoriesId } } } }
       )
       .exec();
-    // next();
+    next();
   } catch (error) {
     next(error);
   }
@@ -43,10 +43,10 @@ CategorySchema.pre('deleteOne', async function (next) {
     await mongoose
       .model('users')
       .updateMany(
-        { subscriptions: { $in: [categoryId] } },
-        { $pull: { subscriptions: { $in: [categoryId] } } }
-      );
-    // next();
+        { subscriptions: { category: { $in: [categoriesId] } } },
+        { $pull: { subscriptions: { category: { $in: [categoriesId] } } } }
+      )
+      .exec();
   } catch (error) {
     next(error);
   }

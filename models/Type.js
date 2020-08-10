@@ -25,9 +25,16 @@ TypeSchema.pre('deleteMany', async function (next) {
       .exec();
     await mongoose
       .model('users')
-      .updateMany({ types: { $in: typesId } }, { $pull: { types: { $in: typesId } } })
+      .updateMany(
+        { subscriptions: { types: { $in: typesId } } },
+        { $pull: { 'subscriptions.$[el].types': { $in: typesId } } },
+        {
+          arrayFilters: [{ 'el.category': category }],
+          new: true,
+        }
+      )
       .exec();
-    // next();
+    next();
   } catch (error) {
     next(error);
   }
@@ -41,12 +48,20 @@ TypeSchema.pre('deleteOne', async function (next) {
     let type = await mongoose.model('types').findOne(this.getFilter()).exec();
     type = type.type;
     const typeId = this.getQuery()['_id'];
-    await mongoose.model('categories').clearTypeRef(type).exec();
+    let category = await mongoose.model('categories').clearTypeRef(type).exec();
+    category = category._id;
     await mongoose.model('policies').deleteMany({ type_id: typeId }).exec();
     await mongoose
       .model('users')
-      .updateMany({ types: { $in: [typeId] } }, { $pull: { types: { $in: [typeId] } } });
-    next();
+      .updateMany(
+        { subscriptions: { types: typeId } },
+        { $pull: { 'subscriptions.$[el].types': typeId } },
+        {
+          arrayFilters: [{ 'el.category': category }],
+          new: true,
+        }
+      )
+      .exec();
   } catch (error) {
     next(error);
   }

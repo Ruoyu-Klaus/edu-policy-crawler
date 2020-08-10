@@ -16,8 +16,6 @@ const start = async () => {
   try {
     await connectDB(MONGOURI);
     await syncDB();
-    let policies = await mongoose.model('categories').find({}).select(['-policies', '-__v']).exec();
-    console.log(policies);
     console.log('Categories and Types in the database has updated...');
     // crawlerSpawn(siteQueue[0]);
   } catch (error) {
