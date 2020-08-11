@@ -15,7 +15,8 @@ const PolicySchema = new mongoose.Schema({
 
 PolicySchema.pre('deleteMany', async function (next) {
   try {
-    const policiesId = this.getFilter()['_id']['$in'];
+    let policies = await mongoose.model('policies').find(this.getFilter()).exec();
+    let policiesId = policies.map(policy => policy._id);
     await mongoose
       .model('categories')
       .updateMany({ policies: { $in: policiesId } }, { $pull: { policies: { $in: policiesId } } })
@@ -33,15 +34,15 @@ PolicySchema.pre('deleteMany', async function (next) {
 // @ Purpose:
 // @ delete references with policies
 
-PolicySchema.pre('deleteOne', async function (next) {
-  try {
-    const policyId = this.getQuery()['_id'];
-    await mongoose.model('categories').clearPolicyRef(policyId).exec();
-    await mongoose.model('types').clearPolicyRef(policyId).exec();
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
+// PolicySchema.pre('deleteOne', async function (next) {
+//   try {
+//     const policyId = this.getQuery()['_id'];
+//     await mongoose.model('categories').clearPolicyRef(policyId).exec();
+//     await mongoose.model('types').clearPolicyRef(policyId).exec();
+//     next();
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 module.exports = mongoose.model('policies', PolicySchema);

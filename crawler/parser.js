@@ -51,7 +51,7 @@ module.exports = ($, category, type, site, pattern, uri) => {
         }
         // only take in the last 30days policies
         date = moment(date);
-        let interval = moment().subtract(30, 'days');
+        let interval = moment().subtract(60, 'days');
 
         if (moment.max(interval, date) === date) {
           date = date.format('YYYY-MM-DD');

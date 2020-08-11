@@ -12,9 +12,9 @@ const TypeSchema = new mongoose.Schema({
 
 TypeSchema.pre('deleteMany', async function (next) {
   try {
-    let types = await mongoose.model('types').find(this.getFilter()).exec();
-    types = types.map(type => type.type);
-    const typesId = this.getFilter()['_id']['$in'];
+    let thoseTypes = await mongoose.model('types').find(this.getFilter()).exec();
+    let types = thoseTypes.map(type => type.type);
+    let typesId = thoseTypes.map(type => type._id);
     await mongoose
       .model('policies')
       .deleteMany({ type_id: { $in: typesId } })
@@ -26,10 +26,9 @@ TypeSchema.pre('deleteMany', async function (next) {
     await mongoose
       .model('users')
       .updateMany(
-        { subscriptions: { types: { $in: typesId } } },
-        { $pull: { 'subscriptions.$[el].types': { $in: typesId } } },
+        { 'subscriptions.types': { $in: typesId } },
+        { $pull: { 'subscriptions.$.types': { $in: typesId } } },
         {
-          arrayFilters: [{ 'el.category': category }],
           new: true,
         }
       )
@@ -43,29 +42,29 @@ TypeSchema.pre('deleteMany', async function (next) {
 // @ Purpose:
 // @ delete references with types
 
-TypeSchema.pre('deleteOne', async function (next) {
-  try {
-    let type = await mongoose.model('types').findOne(this.getFilter()).exec();
-    type = type.type;
-    const typeId = this.getQuery()['_id'];
-    let category = await mongoose.model('categories').clearTypeRef(type).exec();
-    category = category._id;
-    await mongoose.model('policies').deleteMany({ type_id: typeId }).exec();
-    await mongoose
-      .model('users')
-      .updateMany(
-        { subscriptions: { types: typeId } },
-        { $pull: { 'subscriptions.$[el].types': typeId } },
-        {
-          arrayFilters: [{ 'el.category': category }],
-          new: true,
-        }
-      )
-      .exec();
-  } catch (error) {
-    next(error);
-  }
-});
+// TypeSchema.pre('deleteOne', async function (next) {
+//   try {
+//     let type = await mongoose.model('types').findOne(this.getFilter()).exec();
+//     type = type.type;
+//     const typeId = this.getQuery()['_id'];
+//     let category = await mongoose.model('categories').clearTypeRef(type).exec();
+//     category = category._id;
+//     await mongoose.model('policies').deleteMany({ type_id: typeId }).exec();
+//     await mongoose
+//       .model('users')
+//       .updateMany(
+//         { subscriptions: { types: typeId } },
+//         { $pull: { 'subscriptions.$[el].types': typeId } },
+//         {
+//           arrayFilters: [{ 'el.category': category }],
+//           new: true,
+//         }
+//       )
+//       .exec();
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 // @ Params : specific policy mongo ObjectId  | [callback]
 // @ Purpose: when a policy is deleted, need to call this to delete reference in this doc

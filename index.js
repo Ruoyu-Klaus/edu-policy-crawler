@@ -16,8 +16,17 @@ const start = async () => {
   try {
     await connectDB(MONGOURI);
     await syncDB();
+
+    // let a = await mongoose.model('users').updateMany(
+    //   { 'subscriptions.types': { $in: ['5f2e11789c6378141810c480'] } },
+    //   { $pull: { 'subscriptions.$.types': { $in: ['5f2e11789c6378141810c480'] } } },
+    //   {
+    //     new: true,
+    //   }
+    // );
+    // console.log(a);
     console.log('Categories and Types in the database has updated...');
-    // crawlerSpawn(siteQueue[0]);
+    // crawlerSpawn(siteQueue[5]);
   } catch (error) {
     mongoose.connection.close();
     console.error(error);

@@ -45,7 +45,7 @@ const syncDB = () => {
         var types = type_array.filter(i => i.category === category).map(i => i.type);
         return { category, types };
       });
-      await Category.bulkWrite(
+      let updateCategory = await Category.bulkWrite(
         updateCategoriesArr.map(i => ({
           updateOne: {
             filter: { category: i.category },
@@ -54,64 +54,65 @@ const syncDB = () => {
           },
         }))
       );
+      return Promise.resolve(updateCategory);
     } catch (error) {
-      console.log(error);
+      Promise.reject(error);
     }
   };
-  const removeAndUpdateTypes = () => {
-      try {
-        let allTypes = await Type.find({});
-        // let types = Array.from(new Set([...targetSites.map(i => i['type'])]));
-        // let removeTypesArr = allTypes
-        //   .filter(type => !types.includes(type.type))
-        //   .map(type => type._id);
-        let removeTypesArr = [];
-        allTypes.forEach(i=>{
-            let theseTypes = type_array.map(t=>{
-                if(t.type === i.type && t.category !== i.category){
-                    cur.push(i._id)
-                }
-                return t.type
-            })
-            if(!theseTypes.includes(i.type)){
-                cur.push(i._id)
-            }
-        })
-        
-        if (Boolean(removeTypesArr.length)) {
-          await Type.deleteMany({ _id: { $in: removeTypesArr } }).exec();
+  const removeAndUpdateTypes = async () => {
+    try {
+      let allTypes = await Type.find({});
+      let removeTypesArr = [];
+      allTypes.forEach(i => {
+        let theseTypes = type_array.map(t => {
+          if (t.type === i.type && t.category !== i.category) {
+            removeTypesArr.push(i._id);
+          }
+          return t.type;
+        });
+        if (!theseTypes.includes(i.type)) {
+          removeTypesArr.push(i._id);
         }
-        await Type.bulkWrite(
-          type_array.map(i => ({
-            updateOne: {
-              filter: { type: i.type },
-              update: { category: i.category },
-              upsert: true,
-              new: true,
-            },
-          }))
-        );
-      } catch (error) {
-        console.log(error)
-      }
+      });
 
+      if (Boolean(removeTypesArr.length)) {
+        await Type.deleteMany({ _id: { $in: removeTypesArr } }).exec();
+      }
+      let updateType = await Type.bulkWrite(
+        type_array.map(i => ({
+          updateOne: {
+            filter: { type: i.type },
+            update: { category: i.category },
+            upsert: true,
+            new: true,
+          },
+        }))
+      );
+      return Promise.resolve(updateType);
+    } catch (error) {
+      return Promise.reject(error);
+    }
   };
 
   const removeOutdatedPolicies = async () => {
     const outdatedPolicies = await Policy.find({
       date: {
-        $lte: moment().subtract(60, 'days'),
+        $lte: moment().subtract(90, 'days'),
       },
     }).exec();
+
     const outdatedPoliciesId = outdatedPolicies.map(i => i._id);
     await Policy.deleteMany({ _id: { $in: outdatedPoliciesId } });
     return outdatedPoliciesId;
   };
   const main = async () => {
-    await removeAndUpdateCategories();
-    await removeAndUpdateTypes();
-    await removeOutdatedPolicies();
-    return;
+    try {
+      await removeAndUpdateCategories();
+      await removeAndUpdateTypes();
+      await removeOutdatedPolicies();
+    } catch (error) {
+      console.log(error);
+    }
   };
   return main();
 };
