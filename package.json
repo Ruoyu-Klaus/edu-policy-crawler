@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": "Ruoyu Klaus",
   "scripts": {
     "dev": "node -r dotenv/config index.js"
   },

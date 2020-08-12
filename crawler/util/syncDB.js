@@ -114,6 +114,8 @@ const syncDB = () => {
       console.log(error);
     }
   };
-  return main();
+  return new Promise((resolve, reject) => {
+    resolve(main());
+  });
 };
 module.exports = syncDB;

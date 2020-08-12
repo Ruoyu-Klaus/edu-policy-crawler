@@ -24,7 +24,7 @@ CategorySchema.pre('deleteMany', async function (next) {
       .model('users')
       .updateMany(
         { 'subscriptions.category': { $in: categoriesId } },
-        { $pull: { 'subscriptions.$.category': { $in: categoriesId } } },
+        { $pull: { subscriptions: { category: { $in: categoriesId } } } },
         {
           new: true,
         }

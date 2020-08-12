@@ -16,17 +16,8 @@ const start = async () => {
   try {
     await connectDB(MONGOURI);
     await syncDB();
-
-    // let a = await mongoose.model('users').updateMany(
-    //   { 'subscriptions.types': { $in: ['5f2e11789c6378141810c480'] } },
-    //   { $pull: { 'subscriptions.$.types': { $in: ['5f2e11789c6378141810c480'] } } },
-    //   {
-    //     new: true,
-    //   }
-    // );
-    // console.log(a);
     console.log('Categories and Types in the database has updated...');
-    // crawlerSpawn(siteQueue[5]);
+    crawlerSpawn(siteQueue[2]);
   } catch (error) {
     mongoose.connection.close();
     console.error(error);
@@ -36,16 +27,17 @@ const start = async () => {
 
 // Start Directly
 // getProxy();
-start();
+// start();
+
 // Run code at every 6:00am 12:00pm 18:00am 0:00am
-// cron.schedule(
-//   '0 6,12,18,0 * * *',
-//   () => {
-//     getProxy();
-//     start();
-//   },
-//   { scheduled: true, timezone: 'Asia/Shanghai' }
-// );
+cron.schedule(
+  '0 6,12,18,0 * * *',
+  () => {
+    getProxy();
+    start();
+  },
+  { scheduled: true, timezone: 'Asia/Shanghai' }
+);
 
 // Run code every 3 hours
 // cron.schedule('* */3 * * *', () => {
