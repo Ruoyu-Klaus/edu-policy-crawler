@@ -17,7 +17,7 @@ const start = async () => {
     await connectDB(MONGOURI);
     await syncDB();
     console.log('Categories and Types in the database has updated...');
-    crawlerSpawn(siteQueue[2]);
+    crawlerSpawn(siteQueue);
   } catch (error) {
     mongoose.connection.close();
     console.error(error);
