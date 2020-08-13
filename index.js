@@ -26,18 +26,18 @@ const start = async () => {
 };
 
 // Start Directly
-// getProxy();
+getProxy();
 // start();
 
 // Run code at every 6:00am 12:00pm 18:00am 0:00am
-cron.schedule(
-  '0 6,12,18,0 * * *',
-  () => {
-    getProxy();
-    start();
-  },
-  { scheduled: true, timezone: 'Asia/Shanghai' }
-);
+// cron.schedule(
+//   '0 6,12,18,0 * * *',
+//   () => {
+//     getProxy();
+//     start();
+//   },
+//   { scheduled: true, timezone: 'Asia/Shanghai' }
+// );
 
 // Run code every 3 hours
 // cron.schedule('* */3 * * *', () => {
