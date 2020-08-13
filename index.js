@@ -26,7 +26,11 @@ const start = async () => {
 };
 
 // Start Directly
-getProxy();
+try {
+  getProxy();
+} catch (error) {
+  console.error(error);
+}
 // start();
 
 // Run code at every 6:00am 12:00pm 18:00am 0:00am
