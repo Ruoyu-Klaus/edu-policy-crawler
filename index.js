@@ -28,10 +28,10 @@ const start = async () => {
 // Start Directly
 try {
   getProxy();
+  start();
 } catch (error) {
   console.error(error);
 }
-// start();
 
 // Run code at every 6:00am 12:00pm 18:00am 0:00am
 // cron.schedule(
