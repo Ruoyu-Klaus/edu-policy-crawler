@@ -1,4 +1,4 @@
 module.exports = {
-  MONGOURI: process.env.MONGOURIDEV,
+  MONGOURI: process.env.MONGOURI,
   TRANSPORTERDEV: process.env.TRANSPORTERDEV,
 };

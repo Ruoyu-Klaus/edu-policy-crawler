@@ -94,12 +94,12 @@ const syncDB = () => {
     }
   };
 
-  const removeOutdatedPolicies = async () => {
-    const outdatedPolicies = await Policy.find({
-      date: {
-        $lte: moment().subtract(90, 'days'),
-      },
-    }).exec();
+  // const removeOutdatedPolicies = async () => {
+  //   const outdatedPolicies = await Policy.find({
+  //     date: {
+  //       $lte: moment().subtract(90, 'days'),
+  //     },
+  //   }).exec();
 
     const outdatedPoliciesId = outdatedPolicies.map(i => i._id);
     await Policy.deleteMany({ _id: { $in: outdatedPoliciesId } });
@@ -109,7 +109,7 @@ const syncDB = () => {
     try {
       await removeAndUpdateCategories();
       await removeAndUpdateTypes();
-      await removeOutdatedPolicies();
+      // await removeOutdatedPolicies();
     } catch (error) {
       console.log(error);
     }
