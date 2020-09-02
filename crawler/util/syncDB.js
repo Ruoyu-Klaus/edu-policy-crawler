@@ -100,11 +100,10 @@ const syncDB = () => {
   //       $lte: moment().subtract(90, 'days'),
   //     },
   //   }).exec();
-
-    const outdatedPoliciesId = outdatedPolicies.map(i => i._id);
-    await Policy.deleteMany({ _id: { $in: outdatedPoliciesId } });
-    return outdatedPoliciesId;
-  };
+  //   const outdatedPoliciesId = outdatedPolicies.map(i => i._id);
+  //   await Policy.deleteMany({ _id: { $in: outdatedPoliciesId } });
+  //   return outdatedPoliciesId;
+  // };
   const main = async () => {
     try {
       await removeAndUpdateCategories();
