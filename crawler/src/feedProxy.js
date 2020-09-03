@@ -24,8 +24,8 @@ const getProxy = async () => {
     });
     await browser.close();
   } catch (error) {
-    await browser.close();
+    console.log(error);
   }
 };
-
+getProxy();
 module.exports = getProxy;

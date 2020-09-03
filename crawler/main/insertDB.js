@@ -5,9 +5,7 @@ const Type = require('../../models/Type');
 const User = require('../../models/User');
 
 // Import MailSender Module
-const Mailer = require('./nodemailer');
-const { TRANSPORTERDEV } = require('../../config/keys');
-const transporter = JSON.parse(TRANSPORTERDEV);
+const sendEmail = require('./mailgun');
 
 // Receive a map with key as title，values as an object containing {category, site, type, date, title, uri, link}
 const insertDB = async data => {
@@ -30,7 +28,7 @@ const insertDB = async data => {
         { new: true, upsert: true, rawResult: true }
       );
 
-      // thisPolicy structure showing below
+      // ------thisPolicy structure showing below---------
       /*
       { lastErrorObject:
         { n: 1,
@@ -60,13 +58,14 @@ const insertDB = async data => {
         //...send alert to users
         const thisType = await Type.findOne({ type }).exec();
         const users = await User.find({ types: { $all: [thisType._id] } }).exec();
-        if (users) {
-          const recipients = new Map();
-          users.forEach(user => recipients.set(user.email, user.name));
 
-          const content = { category, type, title, date, site, uri, link };
-          const sender = new Mailer(transporter, content);
-          sender.main(recipients);
+        if (users.length > 0) {
+          const recipients = new Map();
+          users.forEach(user =>
+            recipients.set(user.email, { name: user.name, email: user.email, id: user._id })
+          );
+          const content = { category, type, title, date, link };
+          await sendEmail(recipients, content);
         }
       }
       return thisPolicy.value;
